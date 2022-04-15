@@ -32,27 +32,46 @@ const onSignOut = function (event) {
   libApi
     .signOut()
     .then((response) => libUi.onSignOutSuccess(response))
-    .catch(() => libUi.onSignOutFailure)
+    .catch(() => libUi.onSignOutFailure())
 }
 
 const onChangePassword = function (event) {
   libApi
     .changePassword()
     .then((response) => libUi.onChangePasswordSuccess(response))
-    .catch(() => libUi.onChangePasswordFailure)
+    .catch(() => libUi.onChangePasswordFailure())
 }
 
 const onAddGame = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+
   libApi
-    .addGame()
+    .addGame(data)
     .then((response) => libUi.onAddGameSuccess(response))
-    .catch(() => libUi.onAddGameFailure)
+    .catch(() => libUi.onAddGameFailure())
 }
 
+const onDeleteGame = function (event) {
+  libApi
+    .deleteGame()
+    .then(() => libUi.onDeleteGameSuccess())
+    .catch(() => libUi.onDeleteGameFailure())
+}
+
+const onIndexGame = function (event) {
+  libApi
+    .indexGame()
+    .then((response) => libUi.onIndexGameSuccess(response))
+    .catch(() => libUi.onIndexGameFailure())
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
-  onAddGame
+  onAddGame,
+  onDeleteGame,
+  onIndexGame
 }

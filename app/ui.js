@@ -66,6 +66,22 @@ const onAddGameFailure = function () {
   $('#eventStuff').html('<p>yeah thats a lie big dogg</p>')
 }
 
+const onDeleteGameSuccess = function () {
+  $('#eventStuff').html('<p>game is no longer a thing</p>')
+}
+
+const onDeleteGameFailure = function () {
+  $('#eventStuff').html('<p>cannot delete</p>')
+}
+
+const onIndexGameSuccess = function () {
+  $('#eventStuff').html('<p>BOOM</p>')
+}
+
+const onIndexGameFailure = function () {
+  $('#eventStuff').html('<p>cannot index</p>')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -76,5 +92,9 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onAddGameSuccess,
-  onAddGameFailure
+  onAddGameFailure,
+  onDeleteGameSuccess,
+  onDeleteGameFailure,
+  onIndexGameSuccess,
+  onIndexGameFailure
 }

@@ -50,10 +50,32 @@ const addGame = function (data) {
   })
 }
 
+const deleteGame = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const indexGame = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  addGame
+  addGame,
+  deleteGame,
+  indexGame
 }
