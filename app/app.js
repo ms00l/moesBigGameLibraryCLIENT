@@ -3,7 +3,13 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+'use strict'
+
+const libEvents = require('./events')
 
 $(() => {
-  // your JS code goes here
+  $('#allEventForms').hide()
+  $('#cPW, #changePW, #signout').hide()
+  $('#sign-up-form').on('submit', libEvents.onSignUp)
+  $('#sign-in-form').on('submit', libEvents.onSignIn)
 })
