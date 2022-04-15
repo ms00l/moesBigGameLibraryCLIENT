@@ -42,9 +42,17 @@ const onChangePassword = function (event) {
     .catch(() => libUi.onChangePasswordFailure)
 }
 
+const onAddGame = function (event) {
+  libApi
+    .addGame()
+    .then((response) => libUi.onAddGameSuccess(response))
+    .catch(() => libUi.onAddGameFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onAddGame
 }

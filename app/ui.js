@@ -58,6 +58,14 @@ const onChangePasswordFailure = function () {
   $('#auth-display').html('<p>uh oh spaghettios</p>')
 }
 
+const onAddGameSuccess = function () {
+  $('#eventStuff').html('<p>woahhhh you have that game thats so baller</p>')
+}
+
+const onAddGameFailure = function () {
+  $('#eventStuff').html('<p>yeah thats a lie big dogg</p>')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -66,5 +74,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  onAddGameSuccess,
+  onAddGameFailure
 }
