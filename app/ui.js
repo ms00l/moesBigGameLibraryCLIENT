@@ -82,6 +82,14 @@ const onIndexGameFailure = function () {
   $('#eventStuff').html('<p>cannot index</p>')
 }
 
+const onUpdateGameSuccess = function () {
+  $('#eventStuff').html('<p>yay girl slay</p>')
+}
+
+const onUpdateGameFailure = function () {
+  $('#eventStuff').html('<p>oopsie daisy</p>')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -96,5 +104,7 @@ module.exports = {
   onDeleteGameSuccess,
   onDeleteGameFailure,
   onIndexGameSuccess,
-  onIndexGameFailure
+  onIndexGameFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure
 }

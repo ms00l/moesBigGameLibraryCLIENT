@@ -43,10 +43,12 @@ const onChangePassword = function (event) {
 }
 
 const onAddGame = function (event) {
+  console.log('add_Game')
   event.preventDefault()
   const form = event.target
+  console.log('add_Game form', form)
   const data = getFormFields(form)
-
+  console.log('add_Game data', data)
   libApi
     .addGame(data)
     .then((response) => libUi.onAddGameSuccess(response))
@@ -66,6 +68,17 @@ const onIndexGame = function (event) {
     .then((response) => libUi.onIndexGameSuccess(response))
     .catch(() => libUi.onIndexGameFailure())
 }
+
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+
+  libApi
+    .updateGame(data)
+    .then((response) => libUi.onUpdateGameSuccess(response))
+    .catch(() => libUi.onUpdateGameFailure())
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -73,5 +86,6 @@ module.exports = {
   onChangePassword,
   onAddGame,
   onDeleteGame,
-  onIndexGame
+  onIndexGame,
+  onUpdateGame
 }

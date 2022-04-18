@@ -70,6 +70,17 @@ const indexGame = function () {
   })
 }
 
+const updateGame = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token,
+      data
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -77,5 +88,6 @@ module.exports = {
   changePassword,
   addGame,
   deleteGame,
-  indexGame
+  indexGame,
+  updateGame
 }

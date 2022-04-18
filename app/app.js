@@ -8,9 +8,10 @@
 const libEvents = require('./events')
 
 $(() => {
-  $('#gameAdd').on('submit', libEvents.onAddGame)
+  // $('#gameAdd').on('submit', libEvents.onAddGame)
   $('#allEventForms').hide()
   $('#cPW, #changePW, #signout').hide()
   $('#sign-up-form').on('submit', libEvents.onSignUp)
   $('#sign-in-form').on('submit', libEvents.onSignIn)
+  $('#gameAdd').on('submit', libEvents.onAddGame)
 })
