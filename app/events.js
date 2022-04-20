@@ -28,7 +28,7 @@ const onSignIn = function (event) {
     .catch(() => libUi.onSignInFailure())
 }
 
-const onSignOut = function (event) {
+const onSignOut = function () {
   libApi
     .signOut()
     .then((response) => libUi.onSignOutSuccess(response))
@@ -36,19 +36,19 @@ const onSignOut = function (event) {
 }
 
 const onChangePassword = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
   libApi
-    .changePassword()
+    .changePassword(data)
     .then((response) => libUi.onChangePasswordSuccess(response))
     .catch(() => libUi.onChangePasswordFailure())
 }
 
 const onAddGame = function (event) {
-  console.log('add_Game')
   event.preventDefault()
   const form = event.target
-  console.log('add_Game form', form)
   const data = getFormFields(form)
-  console.log('add_Game data', data)
   libApi
     .addGame(data)
     .then((response) => libUi.onAddGameSuccess(response))
@@ -56,8 +56,11 @@ const onAddGame = function (event) {
 }
 
 const onDeleteGame = function (event) {
+  event.preventDefault()
+  const deleteButton = event.target
+  const id = $(deleteButton).data('id')
   libApi
-    .deleteGame()
+    .deleteGame(id)
     .then(() => libUi.onDeleteGameSuccess())
     .catch(() => libUi.onDeleteGameFailure())
 }
@@ -70,13 +73,15 @@ const onIndexGame = function (event) {
 }
 
 const onUpdateGame = function (event) {
+  // use .set
   event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
+  const updateGameForm = getFormFields(event.target)
+  const id = updateGameForm.game.id
+  const formData = getFormFields(event.target)
 
   libApi
-    .updateGame(data)
-    .then((response) => libUi.onUpdateGameSuccess(response))
+    .updateGame(id, formData)
+    .then(() => libUi.onUpdateGameSuccess())
     .catch(() => libUi.onUpdateGameFailure())
 }
 module.exports = {

@@ -52,6 +52,7 @@ const onSignOutFailure = function (error) {
 }
 const onChangePasswordSuccess = function () {
   $('#auth-display').html('<p>great job buddy pal friend bye for now!</p>')
+  $('form').trigger('reset')
 }
 
 const onChangePasswordFailure = function () {
@@ -74,8 +75,23 @@ const onDeleteGameFailure = function () {
   $('#eventStuff').html('<p>cannot delete</p>')
 }
 
-const onIndexGameSuccess = function () {
+const onIndexGameSuccess = function (response, responseData) {
   $('#eventStuff').html('<p>BOOM</p>')
+  store.user = response.user
+  const games = response.game
+  let gameList = 'these are your games'
+  games.forEach((element) => {
+    gameList += `
+    <section id="list">
+      <div id="divTitle">Games</div>
+      <p>Name: ${element.name}</p>
+      <p>Console: ${element.console}</p>
+      <p>Rating: ${element.rating}</p>
+      <p>Review: ${element.review}</p>
+      <p>Status: ${element.status}</p>
+    </section>`
+  })
+  $('#eventStuff').html(gameList)
 }
 
 const onIndexGameFailure = function () {

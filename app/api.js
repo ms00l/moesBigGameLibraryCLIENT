@@ -33,9 +33,9 @@ const changePassword = function (data) {
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
     headers: {
-      Authorization: 'Bearer ' + store.user.token,
-      data
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
   })
 }
 
@@ -44,9 +44,9 @@ const addGame = function (data) {
     method: 'POST',
     url: config.apiUrl + '/games',
     headers: {
-      Authorization: 'Bearer ' + store.user.token,
-      data
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
   })
 }
 
@@ -70,14 +70,14 @@ const indexGame = function () {
   })
 }
 
-const updateGame = function (data) {
+const updateGame = function (id, formData) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/games' + id,
     headers: {
-      Authorization: 'Bearer ' + store.user.token,
-      data
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: formData
   })
 }
 
