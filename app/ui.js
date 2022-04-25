@@ -100,6 +100,7 @@ const onIndexGameFailure = function () {
 
 const onUpdateGameSuccess = function () {
   $('#eventStuff').html('<p>yay girl slay</p>')
+  $('form').trigger('reset')
 }
 
 const onUpdateGameFailure = function () {

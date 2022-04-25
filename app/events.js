@@ -41,7 +41,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(form)
   libApi
     .changePassword(data)
-    .then((response) => libUi.onChangePasswordSuccess(response))
+    .then(() => libUi.onChangePasswordSuccess())
     .catch(() => libUi.onChangePasswordFailure())
 }
 
