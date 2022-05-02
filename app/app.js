@@ -12,7 +12,7 @@ $(() => {
   $('#cPW, #changePW, #signout').hide()
   $('#sign-up-form').on('submit', libEvents.onSignUp)
   $('#sign-in-form').on('submit', libEvents.onSignIn)
-  $('#signout').on('submit', libEvents.onSignOut)
+  $('#signout').on('click', libEvents.onSignOut)
   $('#changePW-form').on('submit', libEvents.onChangePassword)
   $('#addgame').on('submit', libEvents.onAddGame)
   $('#indexgame').on('click', libEvents.onIndexGame)

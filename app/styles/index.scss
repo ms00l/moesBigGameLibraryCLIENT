@@ -1,17 +1,18 @@
-@import '~bootstrap/scss/bootstrap';
+
 @import url("hover-min.css");
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
-    background-color: black;
+    // background-color: black;
     // color: white;
     cursor: crosshair;
     font-family: 'Press Start 2P',
     cursive;
+    text-align: center;
 }
-body {
-    background-color: black;
-}
+// body {
+//     // background-color: black;
+// }
 
 button {
     align-items: center;

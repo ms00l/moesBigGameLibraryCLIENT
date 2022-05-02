@@ -81,7 +81,7 @@ const onUpdateGame = function (event) {
 
   libApi
     .updateGame(id, formData)
-    .then(() => libUi.onUpdateGameSuccess())
+    .then((response) => libUi.onUpdateGameSuccess(response))
     .catch(() => libUi.onUpdateGameFailure())
 }
 module.exports = {

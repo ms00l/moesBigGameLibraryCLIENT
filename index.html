@@ -34,8 +34,8 @@
         <section id="cPW">
         <form id="changePW-form">
           <h4>Change Your Password</h4>
-          <input name="credentials[oldpw]" type="password" placeholder="Old Password">
-          <input name="credentials[newpw]" type="password" placeholder="New Password">
+          <input name="passwords[old]" type="password" placeholder="Old Password">
+          <input name="passwords[new]" type="password" placeholder="New Password">
           <button id="pwpw" class="hvr-buzz" type="submit">Change</button>
         </form>
         </section>
@@ -76,6 +76,8 @@
           <input name="game[review]" type="text" placeholder="Review">
           Did You Beat It?
           <input name="game[status]" type="text" placeholder="true/false">
+          id:
+          <input name="game[id]" type="text" placeholder="id">
           <button class="hvr-buzz" type="submit">Update Game</button>
         </form>
         </section>

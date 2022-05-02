@@ -13,6 +13,7 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
+  console.log(response)
   $('#auth-display').html('<p>welcome my brethren</p>')
   $('#auth-display').delay(3200).fadeOut(100)
   $('form').trigger('reset')
@@ -38,7 +39,7 @@ const onSignInFailure = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('#signout').hide()
+  $('#signout, #allEventForms, #changePW').hide()
   $('#auth-display').text('Signed out successfully')
   $('form').trigger('reset')
   $('#sign-in-form, #sign-up-form').show()
@@ -75,9 +76,8 @@ const onDeleteGameFailure = function () {
   $('#eventStuff').html('<p>cannot delete</p>')
 }
 
-const onIndexGameSuccess = function (response, responseData) {
+const onIndexGameSuccess = function (response) {
   $('#eventStuff').html('<p>BOOM</p>')
-  store.user = response.user
   const games = response.game
   let gameList = 'these are your games'
   games.forEach((element) => {
@@ -89,6 +89,7 @@ const onIndexGameSuccess = function (response, responseData) {
       <p>Rating: ${element.rating}</p>
       <p>Review: ${element.review}</p>
       <p>Status: ${element.status}</p>
+      <p>id: ${element._id}</p>
     </section>`
   })
   $('#eventStuff').html(gameList)
