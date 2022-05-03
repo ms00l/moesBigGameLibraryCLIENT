@@ -9,7 +9,6 @@ const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
 
   libApi
     .signUp(data)
@@ -57,11 +56,10 @@ const onAddGame = function (event) {
 
 const onDeleteGame = function (event) {
   event.preventDefault()
-  const deleteButton = event.target
-  const id = $(deleteButton).data('id')
+  const id = getFormFields(event.target).game.id
   libApi
     .deleteGame(id)
-    .then(() => libUi.onDeleteGameSuccess())
+    .then((response) => libUi.onDeleteGameSuccess(response))
     .catch(() => libUi.onDeleteGameFailure())
 }
 

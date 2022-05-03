@@ -13,7 +13,6 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  console.log(response)
   $('#auth-display').html('<p>welcome my brethren</p>')
   $('#auth-display').delay(3200).fadeOut(100)
   $('form').trigger('reset')
@@ -83,7 +82,6 @@ const onIndexGameSuccess = function (response) {
   games.forEach((element) => {
     gameList += `
     <section id="list">
-      <div id="divTitle">Games</div>
       <p>Name: ${element.name}</p>
       <p>Console: ${element.console}</p>
       <p>Rating: ${element.rating}</p>
@@ -93,6 +91,7 @@ const onIndexGameSuccess = function (response) {
     </section>`
   })
   $('#eventStuff').html(gameList)
+  $('#purge').show()
 }
 
 const onIndexGameFailure = function () {

@@ -9,7 +9,7 @@ const libEvents = require('./events')
 
 $(() => {
   $('#allEventForms').hide()
-  $('#cPW, #changePW, #signout').hide()
+  $('#cPW, #changePW, #signout, #purge').hide()
   $('#sign-up-form').on('submit', libEvents.onSignUp)
   $('#sign-in-form').on('submit', libEvents.onSignIn)
   $('#signout').on('click', libEvents.onSignOut)
@@ -17,4 +17,5 @@ $(() => {
   $('#addgame').on('submit', libEvents.onAddGame)
   $('#indexgame').on('click', libEvents.onIndexGame)
   $('#updategame').on('submit', libEvents.onUpdateGame)
+  $('#deletegame').on('submit', libEvents.onDeleteGame)
 })

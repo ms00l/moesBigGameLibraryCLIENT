@@ -50,10 +50,10 @@ const addGame = function (data) {
   })
 }
 
-const deleteGame = function () {
+const deleteGame = function (id) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/games/' + id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -71,7 +71,6 @@ const indexGame = function () {
 }
 
 const updateGame = function (id, formData) {
-  console.log(store)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + id,
