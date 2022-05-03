@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>moes big game library</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link href="app/styles/hover-min.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>FEED ME YOUR GAMES</h1>
+      <div id="allUserForms">
+        <!-- <button></button> -->
+        <section id="auth-display"></section>
+        <form id="sign-up-form">
+          <h4>Are You New In Town? Sign Up you silly goose</h4>
+          <input name="credentials[email]" type="email" placeholder="Email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Re-Type Password">
+          <button class="hvr-buzz" type="submit">Sign Up</button>
+        </form>
+        <form id="sign-in-form">
+          <h4>GM Say It Back! Sign In</h4>
+          <input name="credentials[email]" type="email" placeholder="Email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <button class="hvr-buzz" type="submit">Sign In</button>
+        </form>
+        <button id="changePW">Want To Change Your Password?</button>
+        <section id="cPW">
+        <form id="changePW-form">
+          <h4>Change Your Password</h4>
+          <input name="passwords[old]" type="password" placeholder="Old Password">
+          <input name="passwords[new]" type="password" placeholder="New Password">
+          <button id="pwpw" class="hvr-buzz" type="submit">Change</button>
+        </form>
+        </section>
+        <section id="signout">
+          <h4>Are You Really Gonna Leave Me? Sign Out</h4>
+          <button id="leave" class="sign-out hvr-buzz">yeah fine whatever leave like everyone else does</button>
+        </section>
+        <p id="message"></p>
+      </div>
+      <div id="allEventForms">
+        <section id="event display error"></section>
+        <section id="startadd">
+        <button id="startaddbutton">Want To Add A Game?</button>
+        <form id="addgame">
+          Game Name:
+          <input name="game[name]" type="text" placeholder="Name">
+          Console:
+          <input name="game[console]" type="text" placeholder="Console">
+          Rating:
+          <input name="game[rating]" type="number" placeholder="Rating">
+          Review:
+          <input name="game[review]" type="text" placeholder="Review">
+          Did You Beat It?
+          <input name="game[status]" type="text" placeholder="true/false">
+          <button id="gameAdd" class="hvr-buzz" type="submit">Add Game</button>
+        </form>
+        </section>
+        <section id="startupdate">
+        <button id="startupdatebutton">Want To Change A Game?</button>
+        <form id="updategame">
+          Game Name:
+          <input name="game[name]" type="text" placeholder="Name">
+          Console:
+          <input name="game[console]" type="text" placeholder="Console">
+          Rating:
+          <input name="game[rating]" type="number" placeholder="Rating">
+          Review:
+          <input name="game[review]" type="text" placeholder="Review">
+          Did You Beat It?
+          <input name="game[status]" type="text" placeholder="true/false">
+          id:
+          <input name="game[id]" type="text" placeholder="id">
+          <button class="hvr-buzz" type="submit">Update Game</button>
+        </form>
+        </section>
+        <section>
+          <button id="indexgame">wait a min what games do i have?</button>
+        </section>
+        <section id="purge">
+          <form id="deletegame">
+            <input name="game[id]" type="text" placeholder="id">
+            <button type="submit">DELETE</button>
+          </form>
+        </section>
+      </div>
+      <section id="eventStuff"></section>
+    </body>
+</html>
