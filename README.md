@@ -11,3 +11,8 @@ delete a game from my account
 update my games
 show my games
 
+### Wireframe (ps im really not good at this)
+![Wire Frame](wireframe.png)
+
+### ERD
+![ERD] (erd.png)
