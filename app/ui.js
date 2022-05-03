@@ -1,11 +1,12 @@
 'use strict'
 const store = require('./store.js')
 
-const onSignUpSuccess = function () {
+const onSignUpSuccess = function (response) {
   $('#auth-display').html('<p>welcome to the sesh</p>')
   $('#sign-up-form, #sign-in-form').hide()
   $('#changPW-form, #signout').show()
   $('form').trigger('reset')
+  store.user = response.user
 }
 
 const onSignUpFailure = function () {
@@ -38,7 +39,7 @@ const onSignInFailure = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('#signout, #allEventForms, #changePW').hide()
+  $('#signout, #allEventForms, #changePW, #cPW').hide()
   $('#auth-display').text('Signed out successfully')
   $('form').trigger('reset')
   $('#sign-in-form, #sign-up-form').show()

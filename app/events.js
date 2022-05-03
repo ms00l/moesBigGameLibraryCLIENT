@@ -12,7 +12,7 @@ const onSignUp = function (event) {
 
   libApi
     .signUp(data)
-    .then(() => libUi.onSignUpSuccess())
+    .then((response) => libUi.onSignUpSuccess(response))
     .catch(() => libUi.onSignUpFailure())
 }
 
